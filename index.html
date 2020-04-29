@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>DeliPizza Online</title>
+    
+    <meta name="description" content="DeliPizza Online" />    
+    <meta name="author" content="Augusto Martinez" />
+		<!-- link to main stylesheets -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/fontawesome.css" type="text/css" />
+    <link rel="stylesheet" href="css/pizza-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/global.css" type="text/css" />
+    
+    <!-- scripts -->    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- load React API -->
+    <script src= "js/react.production.min.js"></script>
+    <!-- load React DOM -->
+    <script src= "js/react-dom.production.min.js"></script>
+    <!-- Load Babel Compiler -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	</head>
+	<body class="bg-body">
+    <!-- HTML start -->
+    <header class="bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <nav class="navbar navbar-default">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                  DeliPizza
+                </a>
+              </div>
+              
+              <div class="nav-wrapper pull-right">
+                <ul class="nav navbar-nav pull-left">
+                  <li class="active">
+                    <a href="#">Order online</a>
+                  </li>
+                  <li>
+                    <a href="/about">About Us</a>
+                  </li>                
+                </ul>
+              
+                <div class="phone-info pull-left">
+                  <p class="phone-call">
+                    Prefer to order by phone? Call Us!
+                  </p>
+                  <p class="phone-number">
+                    1 505 25225555
+                  </p>
+                </div>
+                
+                <div class="order-ready pull-left">
+                  <a href="#" class="bg-secondary"><span><i></i></span> Ready to order?</a>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section class="">
+      <div class="top-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <nav role="navigation">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <span><i class="po po-pizza"></i></span>
+                      <span>Pizza</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">
+                      <span><i class="po po-burger"></i></span>
+                      <span>Burgers</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">
+                      <span><i class="po po-salads"></i></span>
+                      <span>Salads</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">
+                      <span><i class="po po-tacos"></i></span>
+                      <span>Tacos</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">
+                      <span><i class="po po-wraps"></i></span>
+                      <span>Wraps</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">
+                      <span><i class="po po-fries"></i></span>
+                      <span>Fries</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">
+                      <span><i class="po po-drinks"></i></span>
+                      <span>Drinks</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div><!-- /.row -->
+        </div>
+      </div><!-- /.top-banner -->
+      
+      <div class="bg-hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="hero-title">
+                <h1>
+                  Just the Best Pizza in Town!
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.bg-hero -->
+    </section>
+    
+    <footer class="bg-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <nav id="social-nav" role="navigation" class="social-links">
+              <ul>
+                <li>
+                  <a href="#">
+                    <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                    <span>Facebook</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                    <span>Twitter</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                    <span>Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span><i class="fa fa-youtube" aria-hidden="true"></i></span>
+                    <span>YouTube</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/babel" src="js/babel.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

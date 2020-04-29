@@ -1,0 +1,110 @@
+/* CSS Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+html {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #343A40;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* Globals */
+
+footer,
+header,
+nav {
+  display: block;
+}
+
+nav ul,
+nav > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+* {
+  transition: font-size 0.5s;
+}
+
+/* Helpers */
+
+.clearfix {
+  clear: both;
+  float: none;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Branding */
+
+.color-primary {
+  color: #C00A27;
+}
+
+.color-secondary {
+  color: #8CA93E;
+}
+
+.bg-primary {
+  background-color:#C00A27;
+}
+
+.bg-secondary {
+  background-color:#8CA93E;
+}
+
+/* Header */
+
+/* Footer */
+
+footer {
+  background-color: #2C2C2C;
+  padding-bottom: 60px;
+}
+
+footer nav ul li a:hover,
+footer nav ul li a {
+  color: #fff;
+}
+
+/* Mobile only classes */
+@media (max-width: 767px) {
+ 
+}
+
+/* Desktop styling */
+@media (min-width: 768px) {
+  
+}
