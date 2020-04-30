@@ -1,5 +1,3 @@
-
-
 //Goodies list
 
 const goodies = [
