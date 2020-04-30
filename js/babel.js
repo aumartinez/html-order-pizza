@@ -126,24 +126,24 @@ ReactDOM.render(
 const HomePizzas = [
   {
     id: "1",
-    pic: "img/pizza-1.png",
+    pic: "img/pizza-01.png",
     title: "Summer Pizza",
     caption: "Shrimp, Red Capsicum, Green Capsicum, Onion, Chilli flakes, Lemmon Pepper",
     link: "/pizza/summerpizza"
   },
   {
     id: "2",
-    pic: "img/pizza-2.png",
+    pic: "img/pizza-02.png",
     title: "Apricot Chicken",
-    caption: "Crispy bacon, tasky ham, pineapple, onion and stretchy mozzaerlla, finished with BBQ swirl",
+    caption: "Crispy bacon, tasky ham, pineapple, onion and stretchy mozzaerlla, finished with BBQ swirl.",
     link: "/pizza/apricot"
   },
   {
     id: "3",
-    pic: "img/pizza-3.png",
-    title: "Apricot Chicken",
-    caption: "Crispy bacon, tasky ham, pineapple, onion and stretchy mozzaerlla, finished with BBQ swirl",
-    link: "/pizza/apricot"
+    pic: "img/pizza-03.png",
+    title: "Pepperoni Pizza",
+    caption: "Extra-Virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green olives, black olives, fresh tomatoes.",
+    link: "/pizza/pepperoni"
   },
 ];
 
@@ -160,6 +160,12 @@ function SetsCont(props) {
           
           <div clas="card-caption">
             {item.caption}
+          </div>
+          
+          <div className="hover-btn">
+            <a href={item.link} className="btn btn-primary">
+              Take a look!
+            </a>
           </div>
         </div>
       </Col>
@@ -178,6 +184,59 @@ function SetsCont(props) {
 ReactDOM.render(
   <SetsCont homepizzas = {HomePizzas}/>,
   document.getElementById("pizza-sets"),
+);
+
+
+//Promotional offer
+
+const TodayPromotion = [
+  {
+    id: "1",
+    title: "Free delivery",
+    advert: "with any of today's pizza",
+    price: "€9.99",
+    pizzas: [
+      {
+        1: "Chicken Hawaii",
+        2: "Summer Pizza",
+        3: "Vegge Lover"
+      }
+    ]
+  }
+];
+
+function PromoList() {
+  const list = TodayPromotion[0].pizzas;
+  const pizzalist = "";
+  
+  return (
+    <ul className="pizza-promo">{pizzalist}</ul>
+  );
+}
+
+function Promotion(props) {
+  const items = props.todaypromo;
+  
+  return(
+    <Cont>
+      <Row>
+        <Col xs={12} sm={4} className="col-center">
+          <h2 className="text-center">
+            {items[0].title}
+          </h2>
+          <p>
+            {items[0].price}
+          </p>
+          <PromoList />
+        </Col>
+      </Row>
+    </Cont>
+  );
+}
+
+ReactDOM.render(
+  <Promotion todaypromo = {TodayPromotion}/>,
+  document.getElementById("promotion"),
 );
 
 
