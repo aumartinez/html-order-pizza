@@ -198,16 +198,23 @@ const TodayPromotion = [
     pizzas: [
       {
         1: "Chicken Hawaii",
-        2: "Summer Pizza",
-        3: "Vegge Lover"
+        2: "Summer Pizza",      
+        3: "Veggie Lover"
       }
     ]
   }
 ];
 
 function PromoList() {
-  const list = TodayPromotion[0].pizzas;
-  const pizzalist = "";
+  const list = TodayPromotion[0].pizzas[0];
+  var i = 1;
+  const pizzalist = () => {
+    return (
+      <li>
+        {Object.values(list)}
+      </li>
+    );
+  };
   
   return (
     <ul className="pizza-promo">{pizzalist}</ul>
