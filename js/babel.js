@@ -293,17 +293,17 @@ function PromoList() {
 }
 
 function Promotion(props) {
-  const items = props.todaypromo;
+  const item = props.todaypromo;
   
   return(
     <Cont>
       <Row>
         <Col xs={12} sm={4} className="col-center">
           <h2 className="text-center">
-            {items[0].title}
+            {item[0].title}
           </h2>
           <p>
-            {items[0].price}
+            {item[0].price}
           </p>
           <PromoList />
         </Col>
@@ -315,6 +315,45 @@ function Promotion(props) {
 ReactDOM.render(
   <Promotion todaypromo = {TodayPromotion}/>,
   document.getElementById("promotion"),
+);
+
+//Today pizza
+
+const TodayPizza = {
+  id: "",
+  pic: "img/pizza-03.png",
+  title: "Pepperoni Pizza",
+  caption: "Extra-Virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green olives, black olives, fresh tomatoes.",
+  link: "/pizza/pepperoni"
+}
+
+function TodayFeatured(props) {
+  const item = props.todaypizza;
+  
+  return(
+    <Cont>
+      <Row>
+        <Col sm={8} className="col-sm-push-4 today-pizza">
+          <img src={item.pic} alt={item.title} className="img-responsive" />
+        </Col>
+        <Col sm={4} className="col-sm-pull-8">
+          <div className="todaypizza-card">
+            <p className="caption">
+              {item.caption}
+            </p>
+            <a href={item.link} className="btn btn-primary" title={item.title}>
+            Order now
+          </a>
+          </div>
+        </Col>
+      </Row>
+    </Cont>
+  );
+}
+
+ReactDOM.render(
+  <TodayFeatured todaypizza = {TodayPizza}/>,
+  document.getElementById("today-pizza"),
 );
 
 //Social icons list
