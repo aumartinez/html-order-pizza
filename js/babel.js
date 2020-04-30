@@ -58,6 +58,76 @@ ReactDOM.render(
   document.querySelector("header"),
 );
 
+//Goodies list
+
+const Goodies = [
+  {
+    id: "1",
+    icon: "po po-pizza",
+    name: "Pizza",
+    link: "#"
+  },
+  {
+    id: "2",
+    icon: "po po-burger",
+    name: "Burgers",
+    link: "#"
+  },
+  {
+    id: "3",
+    icon: "po po-salads",
+    name: "Salads",
+    link: "#"
+  },
+  {
+    id: "4",
+    icon: "po po-tacos",
+    name: "Tacos",
+    link: "#"
+  },
+  {
+    id: "5",
+    icon: "po po-wraps",
+    name: "Wraps",
+    link: "#"
+  },
+  {
+    id: "6",
+    icon: "po po-fries",
+    name: "Fries",
+    link: "#"
+  },
+  {
+    id: "7",
+    icon: "po po-drinks",
+    name: "Drinks",
+    link: "#"
+  },
+];
+
+function GoodiesIcons(props) {
+  const list = props.goodies;
+  const goodiesList = list.map((item)=>{
+    return(
+      <li key={item.id}>
+        <a href={item.link} title={item.name}>
+          <span className={item.icon}></span>
+          <span>{item.name}</span>
+        </a>
+      </li>
+    );
+  });
+  
+  return(
+    <ul>{goodiesList}</ul>
+  );
+}
+
+ReactDOM.render(
+  <GoodiesIcons goodies = {Goodies} />,
+  document.getElementById("goodies-nav"),
+);
+
 //Featured
 
 const FeaturedCont = () => (
@@ -206,15 +276,16 @@ const TodayPromotion = [
 ];
 
 function PromoList() {
-  const list = TodayPromotion[0].pizzas[0];
-  var i = 1;
-  const pizzalist = () => {
+  const list = TodayPromotion[0].pizzas[0]; 
+  const arr = Object.keys(list).map((key)=>{return [list[key]]});
+
+  const pizzalist = arr.map((item)=>{
     return (
       <li>
-        {Object.values(list)}
+        {item}
       </li>
     );
-  };
+  });
   
   return (
     <ul className="pizza-promo">{pizzalist}</ul>
@@ -244,77 +315,6 @@ function Promotion(props) {
 ReactDOM.render(
   <Promotion todaypromo = {TodayPromotion}/>,
   document.getElementById("promotion"),
-);
-
-
-//Goodies list
-
-const Goodies = [
-  {
-    id: "1",
-    icon: "po po-pizza",
-    name: "Pizza",
-    link: "#"
-  },
-  {
-    id: "2",
-    icon: "po po-burger",
-    name: "Burgers",
-    link: "#"
-  },
-  {
-    id: "3",
-    icon: "po po-salads",
-    name: "Salads",
-    link: "#"
-  },
-  {
-    id: "4",
-    icon: "po po-tacos",
-    name: "Tacos",
-    link: "#"
-  },
-  {
-    id: "5",
-    icon: "po po-wraps",
-    name: "Wraps",
-    link: "#"
-  },
-  {
-    id: "6",
-    icon: "po po-fries",
-    name: "Fries",
-    link: "#"
-  },
-  {
-    id: "7",
-    icon: "po po-drinks",
-    name: "Drinks",
-    link: "#"
-  },
-];
-
-function GoodiesIcons(props) {
-  const list = props.goodies;
-  const goodiesList = list.map((item)=>{
-    return(
-      <li key={item.id}>
-        <a href={item.link} title={item.name}>
-          <span className={item.icon}></span>
-          <span>{item.name}</span>
-        </a>
-      </li>
-    );
-  });
-  
-  return(
-    <ul>{goodiesList}</ul>
-  );
-}
-
-ReactDOM.render(
-  <GoodiesIcons goodies = {Goodies} />,
-  document.getElementById("goodies-nav"),
 );
 
 //Social icons list
