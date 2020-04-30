@@ -1,5 +1,6 @@
 /* CSS Stylesheet */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 html {
   min-height: 100%;
@@ -36,8 +37,7 @@ nav > ul {
 
 h1,
 h2,
-h3 {
-  text-transform: uppercase;
+h3 {  
   font-weight: bold;
   margin-top: 10px;
 }
@@ -77,6 +77,10 @@ h3 {
   color: #8CA93E;
 }
 
+.color-white {
+  color: #fff;
+}
+
 .bg-primary {
   background-color:#C00A27;
 }
@@ -86,6 +90,119 @@ h3 {
 }
 
 /* Header */
+
+header {
+  min-height: 50px;
+}
+
+.navbar-default {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+  font-size: 40px;
+  height: auto;
+  padding: 0;
+  line-height: initial;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.brand {
+  font-family: "Pacifico", cursive;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-default .navbar-collapse {
+  border: none;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+  color: #fff;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.phone-info p {
+  margin: 0;
+}
+
+.phone-info .phone-call {
+  text-align: center;
+  color: #ffae00;
+  font-size: 18px;
+}
+
+.phone-info .phone-number {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.order-ready {
+  position: relative;
+}
+
+.order-ready a {
+  height: 45px;  
+  box-sizing: border-box;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 45px;
+  text-align: center; 
+  font-size: 18px;
+  display: block;
+}
+
+.order-ready a:hover {
+  text-decoration: none;  
+}
+
+.order-ready a:hover ~ #bill {
+  height: 50px;
+  padding: 15px 0;
+  transition: height 0.2s;  
+}
+
+.order-ready a ~ #bill {
+  transition: height 0.2s;
+}
+
+.order-ready #bill {
+  height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  position: absolute;
+  z-index: 1;
+  color: #333;
+  width: 120px;
+  margin: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+.order-ready #bill>span:last-child{
+  font-weight: bold;
+}
+
+.order-ready a i {
+  font-size: 22px;
+}
 
 /* Footer */
 
@@ -105,6 +222,60 @@ footer nav ul li a {
 }
 
 /* Desktop styling */
+
 @media (min-width: 768px) {
+  header {
+    min-height: 100px;
+  }
   
+  .navbar-header {
+    float: none;
+    clear: both;  
+    text-align: center;    
+  }
+  
+  .navbar-default .navbar-brand {
+    padding-top: 15px;
+  }  
+   
+  ul.navbar-nav {
+    padding-top: 30px;
+    margin-right: 30px;
+  }
+  
+  .phone-info {
+    padding-top: 15px;
+    margin-right: 30px;
+  }
+  
+  .order-ready {
+    padding-top: 30px;
+  }
+
+}
+
+@media (min-width: 992px) {    
+  .navbar-default .navbar-brand {
+    float: none;    
+  }
+  
+  #navbar {
+    margin: auto;
+    float: none !important;
+    clear: both;
+    padding: 0 60px;
+  }
+  
+}
+
+@media (min-width: 1200px) {
+  .navbar-header {
+    float: left;      
+  }
+  
+  #navbar {
+    float: right !important;
+    padding: 0;
+    clear: none;
+  }
 }

@@ -12,7 +12,7 @@ const Header = () => (
           <div className="col-xs-12">
             <nav className="navbar navbar-default">
               <div className="navbar-header">
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand brand" href="#">
                   DeliPizza
                 </a>
                 
@@ -39,12 +39,15 @@ const Header = () => (
                     Prefer to order by phone? Call Us!
                   </p>
                   <p className="phone-number">
-                    1 505 25225555
+                    1 505 12345678
                   </p>
                 </div>
                 
                 <div className="order-ready pull-left">
-                  <a href="#" className="bg-secondary"><span><i></i></span> Ready to order?</a>
+                  <a href="#" className="bg-secondary"><span><i className="po po-scooter"></i></span> Ready to order?</a>
+                  <p id="bill">
+                    <span>0</span> <span>items</span> <span>€18.00</span>
+                  </p>
                 </div>
               </div>
             </nav>
