@@ -1,3 +1,5 @@
+"use strict";
+
 const Header = () => (
       <div className="container">
         <div className="row">
