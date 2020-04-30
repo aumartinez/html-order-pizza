@@ -1,5 +1,11 @@
 "use strict";
 
+const Cont = ReactBootstrap.Container;
+const Row = ReactBootstrap.Row;
+const Col = ReactBootstrap.Col;
+
+//Header
+
 const Header = () => (
       <div className="container">
         <div className="row">
@@ -52,25 +58,126 @@ ReactDOM.render(
   document.querySelector("header"),
 );
 
-//BootStrap grid
+//Featured
 
-const Grid = ReactBootstrap.Grid;
-const Row = ReactBootstrap.Row;
-const Col = ReactBootstrap.Col;
-
-const Container = (
-  <Grid>
-  </Grid>
+const FeaturedCont = () => (
+  <Cont>
+    <Row>
+      <Col md={6} className="bg-featured-01">
+        <div className="caption">
+          <h3 className="text-uppercase">
+            Grilled Chicken
+          </h3>
+          <h4 className="text-uppercase">
+            Summer Pizza
+          </h4>
+          <a className="btn btn-primary">
+            Buy this now
+          </a>
+        </div>
+      </Col>
+      
+      <Col xs={6} md={3} className="bg-featured-02">
+        <div className="caption">
+          <h3 className="text-uppercase">
+            Free
+          </h3>
+          <h4 className="text-uppercase">
+            Fries            
+          </h4>
+          <p className="text-uppercase">
+            For online order in Wednesdays
+          </p>
+        </div>
+      </Col>
+      
+      <Col xs={6} md={3} className="bg-featured-03">
+        <div className="caption">
+          <h3 className="text-uppercase">
+            Iced<br /> Coffee
+          </h3>
+          <h4 className="text-uppercase">
+            Summers
+          </h4>
+          <p className="text-uppercase">
+            Only in local
+          </p>
+        </div>
+      </Col>
+      
+      <Col md={6} className="bg-featured-04">
+        <div className="caption">
+          <h3 className="text-uppercase">
+            Order Online
+          </h3>          
+        </div>
+      </Col>
+    </Row>
+  </Cont>
 );
 
-const ContainerFluid = (
-  <Grid fluid={true}>
-  </Grid>
+ReactDOM.render(
+  <FeaturedCont />,
+  document.getElementById("featured"),
 );
 
-const MyRow = (
-  <Row>
-  </Row>
+//Pizzas sets
+
+const HomePizzas = [
+  {
+    id: "1",
+    pic: "img/pizza-1.png",
+    title: "Summer Pizza",
+    caption: "Shrimp, Red Capsicum, Green Capsicum, Onion, Chilli flakes, Lemmon Pepper",
+    link: "/pizza/summerpizza"
+  },
+  {
+    id: "2",
+    pic: "img/pizza-2.png",
+    title: "Apricot Chicken",
+    caption: "Crispy bacon, tasky ham, pineapple, onion and stretchy mozzaerlla, finished with BBQ swirl",
+    link: "/pizza/apricot"
+  },
+  {
+    id: "3",
+    pic: "img/pizza-3.png",
+    title: "Apricot Chicken",
+    caption: "Crispy bacon, tasky ham, pineapple, onion and stretchy mozzaerlla, finished with BBQ swirl",
+    link: "/pizza/apricot"
+  },
+];
+
+function SetsCont(props) {
+  const list = props.homepizzas;
+  const homepizzasList = list.map((item)=>{
+    return(
+      <Col sm={4}>
+        <div className="pizza-card">
+          <img src={item.pic} className="img-responsive" alt={item.title} />
+          <h4>
+            {item.title}
+          </h4>
+          
+          <div clas="card-caption">
+            {item.caption}
+          </div>
+        </div>
+      </Col>
+    );
+  });
+  
+  return(
+    <Cont>
+      <Row>
+        {homepizzasList}
+      </Row>
+    </Cont>
+  );
+}
+
+ReactDOM.render(
+  <SetsCont homepizzas = {HomePizzas}/>,
+  document.getElementById("pizza-sets"),
 );
 
 
