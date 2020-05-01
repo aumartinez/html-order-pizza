@@ -208,7 +208,7 @@ const HomePizzas = [
     id: "2",
     pic: "img/pizza-01.png",
     title: "Apricot Chicken",
-    caption: "Crispy bacon, tasky ham, pineapple, onion and stretchy mozzaerlla, finished with BBQ swirl.",
+    caption: "Crispy bacon, tasky ham, pineapple, onion and stretchy mozzarella, finished with BBQ swirl.",
     link: "/pizza/apricot"
   },
   {
