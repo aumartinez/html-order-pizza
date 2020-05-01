@@ -96,7 +96,8 @@ h3 {
 .btn-primary:active.focus, 
 .btn-primary:active:focus, 
 .btn-primary:active:hover, 
-.open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, 
+.open>.dropdown-toggle.btn-primary.focus, 
+.open>.dropdown-toggle.btn-primary:focus, 
 .open>.dropdown-toggle.btn-primary:hover,
 .btn-primary {
   background-color:#C00A27;
@@ -591,6 +592,38 @@ footer .copyright {
   z-index: 1;
 }
 
+/* Menu page */
+
+.bg-menu {
+  background-image: url("../img/bg-menu.jpg");
+  background-size: cover;
+}
+
+h1.menu-title {
+  color: #fff;
+  font-size: 45px;
+  padding: 30px;
+  background-color: #000;
+}
+
+.menu-item > .row {
+  background-color: #fff;
+  margin: 15px;
+  padding: 15px 15px 30px;
+  min-height: 330px;
+}
+
+.menu-caption,
+.menu-caption a,
+.menu-caption p,
+.menu-caption h2 {
+  text-align: center;
+}
+
+.menu-caption p {
+  padding: 15px 0;
+}
+
 /* Mobile only classes */
 @media (max-width: 767px) {  
   .nav.navbar-nav {
@@ -806,6 +839,19 @@ footer .copyright {
   #prefooter {
     clear: both;
   }
+  
+  /* Menu page */
+  
+  .menu-card {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  
+  .menu-caption,
+  .menu-caption p,
+  .menu-caption h2 {
+    text-align: left;
+  }
 
 }
 
@@ -855,6 +901,10 @@ footer .copyright {
     background-position: center;
     height: 600px;
   }
+  
+  .menu-item > .row {   
+    min-height: 400px;
+  }
 }
 
 @media (min-width: 1200px) {  
@@ -878,5 +928,9 @@ footer .copyright {
   
   #pizza-sets .pizza-card {
     height: 500px;
+  }
+  
+  .menu-item > .row {   
+    min-height: 330px;
   }
 }
