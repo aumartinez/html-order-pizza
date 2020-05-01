@@ -68,6 +68,10 @@ h3 {
   justify-content: space-between;
 }
 
+.img-center > img.img-responsive {
+  margin: 0 auto;
+}
+
 /* Branding */
 
 .color-primary {
@@ -88,6 +92,10 @@ h3 {
 
 .bg-secondary {
   background-color:#8CA93E;
+}
+
+.bg-white {
+  background-color: #fff;
 }
 
 .btn-primary.active.focus, 
@@ -624,6 +632,72 @@ h1.menu-title {
   padding: 15px 0;
 }
 
+/* Pizza page */
+
+.bg-pizza {
+  background-image: url("../img/bg-pizza-table.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.row.pizza-item {
+  
+}
+
+.row.pizza-item > div {
+  
+}
+
+.pizza-wrapper .pizza-caption h1 {
+  text-align: center;
+}
+
+.pizza-price {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+
+.pizza-wrapper form {
+  padding-bottom: 45px;
+  text-align: center;
+}
+
+.pizza-wrapper form .pizza-qty .round-item {
+  margin: 15px 0;
+  font-size: 20px;
+  display: inline-block;
+  height: 35px;
+  width: 90px;
+  border: 1px solid #ccc;
+  border-radius: 35px;  
+  box-sizing: border-box;
+  line-height: 14px;
+}
+
+.pizza-wrapper form .pizza-qty .round-item span {
+  padding: 10px;
+  height: 35px;
+}
+
+.pizza-wrapper form #minus-1 {
+  float: left;  
+}
+
+.pizza-wrapper form #number {
+  float: none;
+  padding: 0;
+  height: auto;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+
+.pizza-wrapper form #plus-1 {
+  float: right;  
+}
+
+
 /* Mobile only classes */
 @media (max-width: 767px) {  
   .nav.navbar-nav {
@@ -851,6 +925,35 @@ h1.menu-title {
   .menu-caption p,
   .menu-caption h2 {
     text-align: left;
+  }
+  
+  .pizza-wrapper .pizza-qty {
+    float: left;
+  }
+  
+  #add-item button {
+    margin: 15px 0;
+    float: left;
+    margin-left: 100px;
+  }
+  
+  /* Pizza page */
+  
+  .pizza-wrapper .pizza-caption {
+    padding: 30px 0;
+  }
+  
+  .pizza-price,
+  .pizza-wrapper .pizza-caption h1 {
+    text-align: left;
+  }
+  
+  .pizza-wrapper .pizza-description {
+    margin-top: 45px;
+  }
+  
+  .pizza-wrapper .pizza-qty {
+    display: inline-block;
   }
 
 }
