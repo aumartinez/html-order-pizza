@@ -5,7 +5,7 @@
 html {
   min-height: 100%;
   padding: 0;
-  margin: 0;
+  margin: 0;  
 }
 
 body {
@@ -89,6 +89,29 @@ h3 {
   background-color:#8CA93E;
 }
 
+.btn-primary.active.focus, 
+.btn-primary.active:focus, 
+.btn-primary.active:hover, 
+.btn-primary:active.focus, 
+.btn-primary:active:focus, 
+.btn-primary:active:hover, 
+.open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, 
+.open>.dropdown-toggle.btn-primary:hover,
+.btn-primary {
+  background-color:#C00A27;
+  border-color: #C00A27;
+}
+
+.btn-primary:hover {
+  background-color:#C00A27;
+  border-color: #C00A27;
+  opacity: 0.7;
+}
+
+#map:target {
+  height: 300px;
+}
+
 /* Header */
 
 header {
@@ -116,6 +139,7 @@ header {
 
 .brand {
   font-family: "Pacifico", cursive;
+  font-weight: normal;
 }
 
 .navbar {
@@ -204,6 +228,280 @@ header {
   font-size: 22px;
 }
 
+/* Top banner */
+
+.top-banner {
+  padding: 30px 0;
+}
+
+#goodies-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#goodies-nav ul li {
+  display: inline-block;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+#goodies-nav ul li:last-child {
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+#goodies-nav ul li a {
+  color: #fff;
+  font-size: 18px;
+}
+
+#goodies-nav ul li a>span:first-child {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.mobile.collapse {
+  display: none;
+}
+
+.mobile.collapse.in,
+.mobile.collapsing {
+  display: block;
+}
+
+/* Hero */
+
+.bg-hero {  
+  background-image: url("../img/home-pizza.jpg");
+  background-size: cover;  
+}
+
+.bg-hero .container {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.title-wrapper {
+  height: 350px;
+  display: table;
+  width: 100%;
+}
+
+.hero-title {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.hero-title h1 {
+  position: relative;
+  color: #fff;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.hero-title h1::after{
+  content: "";
+  width: 60%;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+/* Featured */
+
+.bg-featured-01 {
+  background-image: url("../img/featured-01.jpg");
+  background-size: cover;
+}
+
+.bg-featured-02 {
+  background-image: url("../img/featured-02.jpg");
+  background-size: cover;
+}
+
+.bg-featured-03 {
+  background-image: url("../img/featured-03.jpg");
+  background-size: cover;
+}
+
+.bg-featured-04 {
+  background-image: url("../img/featured-04.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#featured > .container > .row > div {
+  min-height: 300px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#featured .caption {
+  position: absolute;
+  bottom: 0;  
+  text-align: center;
+  margin: 0 auto 15px;
+  left: 0;
+  right: 0;
+}
+
+#featured .caption p,
+#featured .caption h4,
+#featured .caption h3 {
+  color: #fff;
+  text-shadow: 2px 2px 2px #000;
+}
+
+#featured .caption h3 {
+  font-size: 30px;
+  padding: 15px 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#featured .caption h4 {
+  margin: 0;
+}
+
+/* Pizza Sets */
+
+#pizza-sets {
+  padding: 15px 0;
+}
+
+.featured-title h2 {
+  position: relative;
+}
+
+.featured-title h2::after{
+  content: "";
+  width: 100px;
+  height: 3px;
+  background-color:#C00A27;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#pizza-sets .pizza-card {
+  text-align: center;
+}
+
+/* Promotion */
+
+.bg-promo {
+  background-image: url("../img/bg-promo.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+.bg-promo > .container > .row > div {
+  display: table;
+  width: 100%;
+  height: 300px;
+}
+
+.promo-wrapper {
+  overflow: hidden;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.promo-wrapper p,
+.promo-wrapper .pizza-promo,
+.promo-wrapper h2 {
+  color: #fff;
+}
+
+.promo-wrapper h2 {
+  position: relative;
+}
+
+.promo-wrapper h2::before {
+  content: "";
+  width: 16%;
+  height: 1px;
+  background-color:#fff;
+  position: absolute;
+  top: 50%;
+  left: 0;  
+}
+
+.promo-wrapper h2::after {
+  content: "";
+  width: 16%;
+  height: 1px;
+  background-color:#fff;
+  position: absolute;
+  top: 50%;
+  right: 0;  
+}
+
+.promo-wrapper p {
+  float: left;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.promo-wrapper small{
+  font-size: 14px;  
+  display: block;
+  color: #fff;
+}
+
+.promo-wrapper .pizza-promo {
+  list-style: none;
+  padding: 0;
+  padding-left: 30px;
+  float: left;
+  color: #ffae00;
+}
+
+/* Today Pizza */
+
+.today-pizza {
+  background-image: url("../img/bg-pizza.png");
+  background-size: cover;
+  background-position: 66%;
+  background-repeat: no-repeat;
+}
+
+.todaypizza-card {
+  text-align: center;
+}
+
+/* Preefooter */
+
+#prefooter {
+  padding-top: 15px;
+}
+
+#prefooter .pre-card {
+  text-align: center;
+}
+
+#prefooter .pre-card .banner-icon i{
+  font-size: 100px;
+  color: #ccc;  
+}
+
 /* Footer */
 
 footer {
@@ -216,15 +514,80 @@ footer nav ul li a {
   color: #fff;
 }
 
+#pizza-banner {
+  height: 185px;
+  background-image: url("../img/pizza-banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#social-nav {
+  padding-top: 30px;
+  text-align: center;
+}
+
+#social-nav>ul>li {
+  font-size: 26px;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+#social-nav>ul>li:last-child {
+  margin-right: 0;  
+}
+
+footer ul.address {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+
+footer ul.address>li {
+  display: block;
+  color: #fff;
+}
+
+footer .copyright {
+  color: #fff;
+}
+
+/* Bottom map */
+
+.bottom-btn {
+  position: relative;
+}
+
+.bottom-btn a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  z-index: 1;
+}
+
 /* Mobile only classes */
-@media (max-width: 767px) {
+@media (max-width: 767px) {  
+  .nav.navbar-nav {
+    width: 100%;
+    display: block;
+    margin: 0;
+  }
+  
+  .nav.navbar-nav > li {
+    text-align: center;
+  }
+  
   .navbar-toggle {
     border-radius: 0;
   }
   
   .navbar-default .navbar-toggle {
     border:none;
-    margin-top: 12px;
+    margin-top: 15px;
   }
   
   .navbar-default .navbar-toggle:hover,
@@ -235,11 +598,31 @@ footer nav ul li a {
   .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
   }
+  
+  #navbar.collapse.in {
+    padding-bottom: 30px;
+    overflow: visible;
+  }
+  
+  .phone-info {
+    width: 100%;
+  }
+  
+  .order-ready {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .order-ready a {
+    display: inline-block;
+  }
+  
+  
 }
 
 /* Desktop styling */
 
-@media (min-width: 768px) {
+@media (min-width: 768px) {  
   header {
     min-height: 100px;
   }
@@ -280,6 +663,123 @@ footer nav ul li a {
   .order-ready {
     padding-top: 30px;
   }
+  
+  .mobile.collapse {
+    display: block;
+    height: auto !important;
+  }
+  
+  /* Hero */
+  .bg-hero .container {
+    background-color: transparent;
+  }
+  
+  .title-wrapper {
+    height: 685px;
+  }
+  
+  /* Featured */
+  .bg-featured-01 {
+    height: 600px;
+  }
+  
+  #featured .caption h3 {
+    height: 100px;
+    line-height: 100px;
+    padding: 0;
+  }
+  
+  #featured .caption h4 {
+    margin: 10px 0;
+  }
+  
+  #featured .bg-featured-01 .caption {
+    top: 50%;
+  }
+  
+  /* Pizza sets */
+  
+  #pizza-sets {
+    padding-bottom: 30px;
+  }
+  
+  #pizza-sets .pizza-card {
+    height: 400px;
+  }
+  
+  #pizza-sets .pizza-card .hover-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Promotion */
+  
+  .promo-wrapper {
+    text-align: center;    
+  }
+  
+  .promo-caption {
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .promo-caption p {
+    float: none;
+  }
+  
+  .promo-caption ul.pizza-promo {
+    float: none;
+    padding: 0;
+  }
+  
+  /* Today Pizza */
+  
+  #today-pizza {
+    height: 500px;
+    background-image: url("../img/bg-pizza.png");
+    background-size: auto 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .today-pizza-bg {
+    background-image: none;
+  }
+  
+  .todaypizza-card {
+    height: 500px;
+    display: table;
+    width: 100%;
+  }
+  
+  .todaypizza-caption {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  #prefooter {
+    padding-bottom: 30px;
+  }
+  
+  /* Footer */
+  
+  footer ul.address>li {
+    display: inline-block;
+    padding: 0 15px;
+    border-right: 2px solid #C00A27;
+  }
+  
+  footer ul.address>li:last-child {
+    padding-right: 0;
+    border-right: none;
+  }
+  
+  #prefooter {
+    clear: both;
+  }
 
 }
 
@@ -308,6 +808,27 @@ footer nav ul li a {
   .phone-info .phone-number {
     font-size: 30px;
   }
+  
+  /* Hero */
+  
+  .hero-title h1 {
+    font-size: 60px;
+    color: #fff;
+  }
+  
+  /* Pizza sets */
+  
+  #pizza-sets .pizza-card {
+    height: 465px;
+  }
+  
+  /* Today Pizza */
+  
+  #today-pizza {    
+    background-size: contain;
+    background-position: center;
+    height: 600px;
+  }
 }
 
 @media (min-width: 1200px) {  
@@ -325,5 +846,11 @@ footer nav ul li a {
   
   .phone-info .phone-number {
     font-size: 30px;
+  }
+  
+  /* Pizza sets */
+  
+  #pizza-sets .pizza-card {
+    height: 500px;
   }
 }
