@@ -403,6 +403,10 @@ header {
   text-align: center;
 }
 
+#pizza-sets .pizza-card img{
+  margin: 0 auto;
+}
+
 /* Promotion */
 
 .bg-promo {
@@ -414,8 +418,9 @@ header {
 
 .bg-promo > .container > .row > div {
   display: table;
-  width: 100%;
+  width: 290px;
   height: 300px;
+  margin: 0 auto;
 }
 
 .promo-wrapper {
@@ -485,6 +490,10 @@ header {
 
 .todaypizza-card {
   text-align: center;
+}
+
+#today-pizza img {
+  margin: 0 auto;
 }
 
 /* Preefooter */
@@ -715,6 +724,10 @@ footer .copyright {
   }
   
   /* Promotion */
+  
+  .bg-promo > .container > .row > div {    
+    width: 100%;
+  }
   
   .promo-wrapper {
     text-align: center;    
