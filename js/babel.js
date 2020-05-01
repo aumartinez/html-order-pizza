@@ -199,21 +199,21 @@ ReactDOM.render(
 const HomePizzas = [
   {
     id: "1",
-    pic: "img/pizza-01.png",
+    pic: "img/pizza-08.png",
     title: "Summer Pizza",
     caption: "Shrimp, Red Capsicum, Green Capsicum, Onion, Chilli flakes, Lemmon Pepper",
     link: "/pizza/summerpizza"
   },
   {
     id: "2",
-    pic: "img/pizza-02.png",
+    pic: "img/pizza-01.png",
     title: "Apricot Chicken",
     caption: "Crispy bacon, tasky ham, pineapple, onion and stretchy mozzaerlla, finished with BBQ swirl.",
     link: "/pizza/apricot"
   },
   {
     id: "3",
-    pic: "img/pizza-03.png",
+    pic: "img/pizza-07.png",
     title: "Pepperoni Pizza",
     caption: "Extra-Virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green olives, black olives, fresh tomatoes.",
     link: "/pizza/pepperoni"
