@@ -12,11 +12,11 @@ const Header = () => (
           <div className="col-xs-12">
             <nav className="navbar navbar-default">
               <div className="navbar-header">
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand brand" href="#">
                   DeliPizza
                 </a>
                 
-                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target=".mobile" aria-expanded="false" aria-controls="navbar">
                   <span className="sr-only">Toggle navigation</span>
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
@@ -24,7 +24,7 @@ const Header = () => (
                 </button>
               </div>
               
-              <div id="navbar" className="navbar-collapse pull-right collapse">
+              <div id="navbar" className="navbar-collapse pull-right collapse mobile">
                 <ul className="nav navbar-nav pull-left">
                   <li className="active">
                     <a href="#">Order online</a>
@@ -39,12 +39,15 @@ const Header = () => (
                     Prefer to order by phone? Call Us!
                   </p>
                   <p className="phone-number">
-                    1 505 25225555
+                    1 505 12345678
                   </p>
                 </div>
                 
                 <div className="order-ready pull-left">
-                  <a href="#" className="bg-secondary"><span><i></i></span> Ready to order?</a>
+                  <a href="#" className="bg-secondary"><span><i className="po po-scooter"></i></span> Ready to order?</a>
+                  <p id="bill">                    
+                    <span>0</span> <span>items</span> <span>€18.00</span>                    
+                  </p>
                 </div>
               </div>
             </nav>
@@ -131,9 +134,9 @@ ReactDOM.render(
 //Featured
 
 const FeaturedCont = () => (
-  <Cont>
+  <Cont>    
     <Row>
-      <Col md={6} className="bg-featured-01">
+      <Col sm={6} md={6} className="bg-featured-01">
         <div className="caption">
           <h3 className="text-uppercase">
             Grilled Chicken
@@ -147,7 +150,7 @@ const FeaturedCont = () => (
         </div>
       </Col>
       
-      <Col xs={6} md={3} className="bg-featured-02">
+      <Col sm={3} md={3} className="bg-featured-02">
         <div className="caption">
           <h3 className="text-uppercase">
             Free
@@ -156,15 +159,15 @@ const FeaturedCont = () => (
             Fries            
           </h4>
           <p className="text-uppercase">
-            For online order in Wednesdays
+            For online orders on Wednesdays
           </p>
         </div>
       </Col>
       
-      <Col xs={6} md={3} className="bg-featured-03">
+      <Col sm={3} md={3} className="bg-featured-03">
         <div className="caption">
           <h3 className="text-uppercase">
-            Iced<br /> Coffee
+            Iced<br className="visible-xs" /> Coffee
           </h3>
           <h4 className="text-uppercase">
             Summers
@@ -175,7 +178,7 @@ const FeaturedCont = () => (
         </div>
       </Col>
       
-      <Col md={6} className="bg-featured-04">
+      <Col sm={6} md={6} className="bg-featured-04">
         <div className="caption">
           <h3 className="text-uppercase">
             Order Online
@@ -245,6 +248,15 @@ function SetsCont(props) {
   return(
     <Cont>
       <Row>
+        <Col xs={12}>
+          <div className="featured-title">
+            <h2 className="text-center">
+              Pizza sets
+            </h2>
+          </div>
+        </Col>
+      </Row>
+      <Row>
         {homepizzasList}
       </Row>
     </Cont>
@@ -299,13 +311,18 @@ function Promotion(props) {
     <Cont>
       <Row>
         <Col xs={12} sm={4} className="col-center">
-          <h2 className="text-center">
-            {item[0].title}
-          </h2>
-          <p>
-            {item[0].price}
-          </p>
-          <PromoList />
+          <div className="promo-wrapper">
+            <div className="promo-caption">
+              <h2 className="text-center">
+                {item[0].title}
+              </h2>
+              <small>min order</small>
+              <p>              
+                {item[0].price}
+              </p>
+              <PromoList />
+            </div>
+          </div>
         </Col>
       </Row>
     </Cont>
@@ -333,17 +350,19 @@ function TodayFeatured(props) {
   return(
     <Cont>
       <Row>
-        <Col sm={8} className="col-sm-push-4 today-pizza">
+        <Col sm={8} className="col-sm-push-4 today-pizza-bg">
           <img src={item.pic} alt={item.title} className="img-responsive" />
         </Col>
         <Col sm={4} className="col-sm-pull-8">
           <div className="todaypizza-card">
-            <p className="caption">
-              {item.caption}
-            </p>
-            <a href={item.link} className="btn btn-primary" title={item.title}>
-            Order now
-          </a>
+            <div className="todaypizza-caption">
+              <p>
+                {item.caption}
+              </p>
+              <a href={item.link} className="btn btn-primary" title={item.title}>
+                Order now
+              </a>
+            </div>
           </div>
         </Col>
       </Row>
