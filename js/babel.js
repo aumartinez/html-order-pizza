@@ -12,7 +12,7 @@ const Header = () => (
           <div className="col-xs-12">
             <nav className="navbar navbar-default">
               <div className="navbar-header">
-                <a className="navbar-brand brand" href="#">
+                <a className="navbar-brand brand" href="/">
                   DeliPizza
                 </a>
                 
@@ -27,7 +27,7 @@ const Header = () => (
               <div id="navbar" className="navbar-collapse pull-right collapse mobile">
                 <ul className="nav navbar-nav pull-left">
                   <li className="active">
-                    <a href="#">Order online</a>
+                    <a href="/menu">Order online</a>
                   </li>
                   <li>
                     <a href="/about">About Us</a>
@@ -46,7 +46,7 @@ const Header = () => (
                 <div className="order-ready pull-left">
                   <a href="#" className="bg-secondary"><span><i className="po po-scooter"></i></span> Ready to order?</a>
                   <p id="bill">                    
-                    <span>0</span> <span>items</span> <span>€18.00</span>                    
+                    <span>0</span> <span>items</span> <span>€00.00</span>                    
                   </p>
                 </div>
               </div>
@@ -56,12 +56,10 @@ const Header = () => (
       </div>
 );
 
-if(document.querySelector("header")!= null){
-  ReactDOM.render(
-    <Header />,
-    document.querySelector("header"),
-  );
-}
+ReactDOM.render(
+  <Header />,
+  document.querySelector("header"),
+);
 
 //Goodies list
 
@@ -128,7 +126,7 @@ function GoodiesIcons(props) {
   );
 }
 
-if(document.getElementById("goodies-nav")!= null){
+if (document.getElementById("goodies-nav")){
   ReactDOM.render(
     <GoodiesIcons goodies = {Goodies} />,
     document.getElementById("goodies-nav"),
@@ -193,7 +191,7 @@ const FeaturedCont = () => (
   </Cont>
 );
 
-if(document.getElementById("featured")!= null){
+if (document.getElementById("featured")){
   ReactDOM.render(
     <FeaturedCont />,
     document.getElementById("featured"),
@@ -208,21 +206,21 @@ const HomePizzas = [
     pic: "img/pizza-08.png",
     title: "Summer Pizza",
     caption: "Shrimp, Red Capsicum, Green Capsicum, Onion, Chilli flakes, Lemmon Pepper",
-    link: "/pizza/summerpizza"
+    link: "/pizza/pizza-08"
   },
   {
     id: "2",
     pic: "img/pizza-01.png",
     title: "Apricot Chicken",
     caption: "Crispy bacon, tasky ham, pineapple, onion and stretchy mozzarella, finished with BBQ swirl.",
-    link: "/pizza/apricot"
+    link: "/pizza/pizza-01"
   },
   {
     id: "3",
     pic: "img/pizza-07.png",
     title: "Pepperoni Pizza",
     caption: "Extra-Virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green olives, black olives, fresh tomatoes.",
-    link: "/pizza/pepperoni"
+    link: "/pizza/pizza-07"
   },
 ];
 
@@ -269,7 +267,7 @@ function SetsCont(props) {
   );
 }
 
-if(document.getElementById("pizza-sets")!= null){
+if (document.getElementById("pizza-sets")){
   ReactDOM.render(
     <SetsCont homepizzas = {HomePizzas}/>,
     document.getElementById("pizza-sets"),
@@ -336,7 +334,7 @@ function Promotion(props) {
   );
 }
 
-if(document.getElementById("promotion")!= null){
+if (document.getElementById("promotion")){
   ReactDOM.render(
     <Promotion todaypromo = {TodayPromotion}/>,
     document.getElementById("promotion"),
@@ -379,7 +377,7 @@ function TodayFeatured(props) {
   );
 }
 
-if(document.getElementById("today-pizza")!= null){
+if (document.getElementById("today-pizza")){
   ReactDOM.render(
     <TodayFeatured todaypizza = {TodayPizza}/>,
     document.getElementById("today-pizza"),
@@ -433,7 +431,7 @@ function SocialIcons(props) {
   );
 }
 
-if(document.getElementById("social-nav")!= null){
+if (document.getElementById("social-nav")){
   ReactDOM.render(
     <SocialIcons social = {Social} />,
     document.getElementById("social-nav"),
