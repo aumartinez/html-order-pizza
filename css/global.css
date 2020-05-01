@@ -16,6 +16,7 @@ body {
   min-height: 100vh;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 /* Globals */
@@ -308,6 +309,18 @@ header {
   position: relative;
   color: #fff;
   text-shadow: 2px 2px 2px #000;
+  z-index: 1;
+}
+
+.hero-title h1::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);  
+  top: 0;
+  height: 100px;
+  width: 5000px;
+  z-index: -1;
+  left: -75%;
 }
 
 .hero-title h1::after{
