@@ -657,7 +657,7 @@ h1.menu-title {
   content: "/";
 }
 
-.breadcrumb ul li:first-child::after {
+.breadcrumb ul li:last-child::after {
   content: "";
 }
 
@@ -700,7 +700,8 @@ h1.menu-title {
 }
 
 .pizza-wrapper form #minus-1 {
-  float: left;  
+  float: left;
+  cursor: pointer;
 }
 
 .pizza-wrapper form #number {
@@ -714,6 +715,7 @@ h1.menu-title {
 
 .pizza-wrapper form #plus-1 {
   float: right;  
+  cursor: pointer;
 }
 
 
