@@ -58,7 +58,7 @@ const Header = () => (
 
 ReactDOM.render(
   <Header />,
-  document.querySelector("header"),
+  document.querySelector("header")
 );
 
 //Goodies list
@@ -129,7 +129,7 @@ function GoodiesIcons(props) {
 if (document.getElementById("goodies-nav")){
   ReactDOM.render(
     <GoodiesIcons goodies = {Goodies} />,
-    document.getElementById("goodies-nav"),
+    document.getElementById("goodies-nav")
   );  
 }
 
@@ -194,7 +194,7 @@ const FeaturedCont = () => (
 if (document.getElementById("featured")){
   ReactDOM.render(
     <FeaturedCont />,
-    document.getElementById("featured"),
+    document.getElementById("featured")
   );
 }
 
@@ -270,7 +270,7 @@ function SetsCont(props) {
 if (document.getElementById("pizza-sets")){
   ReactDOM.render(
     <SetsCont homepizzas = {HomePizzas}/>,
-    document.getElementById("pizza-sets"),
+    document.getElementById("pizza-sets")
   );
 }
 
@@ -337,7 +337,7 @@ function Promotion(props) {
 if (document.getElementById("promotion")){
   ReactDOM.render(
     <Promotion todaypromo = {TodayPromotion}/>,
-    document.getElementById("promotion"),
+    document.getElementById("promotion")
   );
 }
 
@@ -380,7 +380,7 @@ function TodayFeatured(props) {
 if (document.getElementById("today-pizza")){
   ReactDOM.render(
     <TodayFeatured todaypizza = {TodayPizza}/>,
-    document.getElementById("today-pizza"),
+    document.getElementById("today-pizza")
   );
 }
 
@@ -431,9 +431,65 @@ function SocialIcons(props) {
   );
 }
 
-if (document.getElementById("social-nav")){
-  ReactDOM.render(
-    <SocialIcons social = {Social} />,
-    document.getElementById("social-nav"),
-  );
+const PizzaBanner = () => (
+  <div id="pizza-banner">
+  </div>
+);
+
+const Footer = () => (   
+  <Cont>
+    <Row>
+      <Col xs={12}>
+        <nav id="social-nav" role="navigatin" className="social-links">
+          <SocialIcons social = {Social} />
+          
+        </nav>
+      </Col>
+    </Row>
+    
+    <Row>
+      <Col xs={12}>
+        <h2 className="text-center color-white brand">
+          DeliPizza
+        </h2>
+      </Col>
+    </Row>
+    
+    <Row>
+      <Col xs={12}>
+        <ul className="address">
+          <li>
+            DeliPizza
+          </li>
+          <li>
+            Iglesia de la Asuncion, 2c al norte
+          </li>              
+          <li>
+            Telephone: +1 555 1234
+          </li>
+        </ul>
+      </Col>
+    </Row>
+    
+    <Row>
+      <Col xs={12} className="copyright">
+        <p className="text-center">
+          Copyright © 2020
+        </p>
+      </Col>
+    </Row>
+  </Cont>
+  
+);
+
+const FooterElems = () => {
+  return [
+    <PizzaBanner />, 
+    <Footer />
+  ];
 }
+
+ReactDOM.render(    
+  <FooterElems />,  
+  document.querySelector("footer")
+);
