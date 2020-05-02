@@ -16,7 +16,11 @@ const Header = () => (
                   DeliPizza
                 </a>
                 
-                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target=".mobile" aria-expanded="false" aria-controls="navbar">
+                <a href="/cart" title="Cart" className="color-white shop-icon">
+                  <span><i className="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                </a>
+                
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                   <span className="sr-only">Toggle navigation</span>
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
