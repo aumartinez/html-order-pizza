@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>DeliPizza Online</title>
+    
+    <meta name="description" content="DeliPizza Online" />    
+    <meta name="author" content="Augusto Martinez" />
+		<!-- link to main stylesheets -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/fontawesome.css" type="text/css" />
+    <link rel="stylesheet" href="css/pizza-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/global.css" type="text/css" />
+    
+    <!-- scripts -->    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+	</head>
+	<body class="bg-body">
+    <script src="js/loader.js"></script>
+    <!-- HTML start -->
+    <header class="bg-primary">
+      <!-- top navigation -->
+    </header>
+    
+    <section>
+      <div class="container bg-white">
+          <div class="row">
+            <div class="col-xs-12">
+              <nav class="breadcrumb" role="navigation">
+                <ul class="list-inline">
+                  <li>
+                    <a href="/" title="Home">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/Cart" title="Car">
+                      Cart
+                    </a>
+                  </li>                  
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="cart-status">
+              <ul>
+                <li class="active">
+                  <span>1</span>
+                  <span>Shopping Cart</span>
+                </li>
+                <li>
+                  <span>2</span>
+                  <span>Add Delivery</span>
+                </li>
+                <li>
+                  <span>3</span>
+                  <span>Checkout</span>
+                </li>
+              </ul>              
+            </div>
+          </div>
+          
+                   
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <h1 class="text-center cart-title">
+                  You shopping cart
+                </h1>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Cart with items -->
+          <form id="cart-form" action="/cart/order" method="post" class="cart-wrapper">
+          <input id="order-number" name="order-number" type="hidden" value="0001" />
+            <div class="col-xs-12 cart-cont">
+              <div class="row">
+                <div class="col-sm-9">
+                  <div class="order-items">
+                    <div id="item-1" class="row">
+                      <div class="col-sm-3 img-center">
+                        <img src="img/pizza-01.png" alt="Pizza item" class="img-responsive" />
+                      </div>
+                      
+                      <div class="col-sm-6">
+                        <h3>
+                          Pizza name
+                        </h3>
+                        
+                        <div class="item-description">
+                          <p>
+                           Mouth watering pepperoni, cabanossi, mushroom, capsicum, black olives and stretchy mozzarella, seasoned with garlic and oregano.
+                          </p>
+                        </div>
+                        
+                        <div class="item-price">
+                          <p>
+                            <span>Price: </span>
+                            <span>€</span>
+                            <span>19.90</span>
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div class="col-sm-3">
+                        <div class="pizza-qty">
+                          <div class="round-item">
+                            <span class="minus"> - </span>
+                            <span class="number">1</span>
+                            <span class="plus"> + </span>
+                            <input id="prod-id-1" name="prod-id-1" type="hidden" value="pizza-01" class="hidden-product">
+                            <input id="item-qty-1" name="item-qty-1" type="hidden" min="1" max="99" value="1" class="hidden-qty">
+                          </div>
+                        </div>
+                        
+                        <div class="cart-controls">
+                          <button type="button" class="btn btn-primary update-control">
+                          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                          </button>
+                          <button type="button" class="btn btn-primary delete-control">
+                          <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                        <div class="mess alert">
+                        </div>
+                      </div>
+                    </div><!-- /item row -->
+                    
+                    <div id="item-2" class="row">
+                      <div class="col-sm-3 img-center">
+                        <img src="img/pizza-01.png" alt="Pizza item" class="img-responsive" />
+                      </div>
+                      
+                      <div class="col-sm-6">
+                        <h3>
+                          Pizza name
+                        </h3>
+                        
+                        <div class="item-description">
+                          <p>
+                           Mouth watering pepperoni, cabanossi, mushroom, capsicum, black olives and stretchy mozzarella, seasoned with garlic and oregano.
+                          </p>
+                        </div>
+                        
+                        <div class="item-price">
+                          <p>
+                            <span>Price: </span>
+                            <span>€</span>
+                            <span>19.90</span>
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div class="col-sm-3">
+                        <div class="pizza-qty">
+                          <div class="round-item">
+                            <span class="minus"> - </span>
+                            <span class="number">1</span>
+                            <span class="plus"> + </span>
+                            <input id="prod-id-2" name="prod-id-2" type="hidden" value="pizza-02" class="hidden-product">
+                            <input id="item-qty-2" name="item-qty-2" type="hidden" min="1" max="99" value="1" class="hidden-qty">
+                          </div>
+                        </div>
+                        
+                        <div class="cart-controls">
+                          <button type="button" class="btn btn-primary update-control">
+                          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                          </button>
+                          <button type="button" class="btn btn-primary delete-control">
+                          <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                        <div class="mess alert">
+                        </div>
+                      </div>
+                    </div><!-- /item row -->
+                    
+                    <div id="item-3" class="row">
+                      <div class="col-sm-3 img-center">
+                        <img src="img/pizza-01.png" alt="Pizza item" class="img-responsive" />
+                      </div>
+                      
+                      <div class="col-sm-6">
+                        <h3>
+                          Pizza name
+                        </h3>
+                        
+                        <div class="item-description">
+                          <p>
+                           Mouth watering pepperoni, cabanossi, mushroom, capsicum, black olives and stretchy mozzarella, seasoned with garlic and oregano.
+                          </p>
+                        </div>
+                        
+                        <div class="item-price">
+                          <p>
+                            <span>Price: </span>
+                            <span>€</span>
+                            <span>19.90</span>
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div class="col-sm-3">
+                        <div class="pizza-qty">
+                          <div class="round-item">
+                            <span class="minus"> - </span>
+                            <span class="number">1</span>
+                            <span class="plus"> + </span>
+                            <input id="prod-id-3" name="prod-id-3" type="hidden" value="pizza-03" class="hidden-product" class="hidden-product">
+                            <input id="item-qty-3" name="item-qty-3" type="hidden" min="1" max="99" value="1" class="hidden-qty">
+                          </div>
+                        </div>
+                        
+                        <div class="cart-controls">
+                          <button type="button" class="btn btn-primary update-control">
+                          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                          </button>
+                          <button type="button" class="btn btn-primary delete-control">
+                          <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                        <div class="mess alert">
+                        </div>
+                      </div>
+                    </div><!-- /item row -->
+                    
+                  </div><!-- /items list -->
+                </div>
+                <div class="col-sm-3">
+                  <div class="order-summary">
+                    <div class="summary-label bg-primary">
+                      <h2 class="color-white text-center">
+                        Order Summary
+                      </h2>
+                    </div>
+                    
+                    <div class="summary-detail">
+                      <p>
+                        <span>Sub total :</span>
+                        <span id="subtotal">19.90</span>
+                      </p>
+                      
+                      <p>
+                        <span>Shipping :</span>
+                        <span id="shipping">0</span>
+                      </p>
+                      
+                      <hr />
+                      
+                      <p class="summary-total">
+                        <span>Total in Euros: </span>
+                        <span id="total">19.90</span>
+                      </p>
+                      
+                      <p class="dollar-total">
+                        <span>Total in Dollars: </span>
+                        <span id="dollar-total">19.90</span>
+                      </p>
+                      
+                      <p>
+                        <button type="submit" class="btn btn-primary btn-long">
+                          <i class="po po-scooter"></i> Add Delivery
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="bg-footer">      
+    </footer>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- load React API -->
+    <script type="text/javascript" src="js/react.production.min.js"></script>
+    <!-- load React DOM -->
+    <script type="text/javascript" src="js/react-dom.production.min.js"></script>    
+    <!-- Load Babel Compiler -->
+    <script type="text/javascript" src="js/babel.min.js"></script> 
+    <!-- Load BootStrap Components -->
+    <script type="text/javascript" src="js/react-bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/babel" src="js/babel.js"></script>    
+    <script type="text/javascript" src="js/cart.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

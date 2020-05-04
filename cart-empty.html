@@ -32,8 +32,7 @@
     </header>
     
     <section>
-      <div class="pizza-wrapper bg-pizza">
-        <div class="container bg-white">
+      <div class="container bg-white">
           <div class="row">
             <div class="col-xs-12">
               <nav class="breadcrumb" role="navigation">
@@ -44,58 +43,48 @@
                     </a>
                   </li>
                   <li>
-                    <a href="/menu" title="Menu">
-                      Menu
+                    <a href="/Cart" title="Car">
+                      Cart
                     </a>
-                  </li>
-                  <li>
-                    <a href="/pizza/pizza-02" title="Apricot Chicken">
-                      Apricot Chicken
-                    </a>
-                  </li>
+                  </li>                  
                 </ul>
               </nav>
             </div>
           </div>
         </div>
-    
-        <div class="container bg-white">
-          <div class="row pizza-item">
-            <div class="col-sm-6 img-center pizza-pic">
-              <img src="img/pizza-01.png" class="img-responsive" />
+        
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="cart-status">
+              <ul>
+                <li class="active">
+                  <span>1</span>
+                  <span>Shopping Cart</span>
+                </li>
+                <li>
+                  <span>2</span>
+                  <span>Add Shipping</span>
+                </li>
+                <li>
+                  <span>3</span>
+                  <span>Checkout</span>
+                </li>
+              </ul>              
             </div>
-            <div class="col-sm-6">
-              <div class="pizza-caption">
-                <h1>
-                  Apricot Chicken
-                </h1>
-                
-                <p class="pizza-description">
-                  Crispy bacon, tasty ham, pineapple, onion and stretchy mozzarella, finished with a BBQ swirl.
-                </p>
-                
-                <p class="pizza-price">
-                  <span>€</span><span>19.00</span>
-                </p>
-                
-                <form id="add-item" action="/cart" method="post">
-                  <div class="pizza-qty">
-                    <div class="round-item">
-                      <span id="minus-1"> - </span>
-                      <span id="number">1</span>
-                      <span id="plus-1"> + </span>
-                      <input id="prod-id" name="prod-id" type="hidden" value="pizza-01" />
-                      <input id="item-qty" name="item-qty" type="hidden" min="1" max="99" value="1" />
-                    </div>
-                  </div>
-                  <button class="btn btn-primary">
-                    <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span> <span>Add to cart</span>
-                  </button>                  
-                </form>
-                <div id="mess" class="alert">
-                </div>
-              </div>
-            </div>
+          </div>
+          
+          <!-- Empty cart -->
+          <div class="col-xs-12 cart-cont empty">
+            <h1 class="text-center">
+              Your cart is currently empty
+            </h1>
+            
+            <p class="text-center">
+              <a href="#" class="btn btn-primary" title="Return to shop">
+                Return to shop
+              </a>
+            </p>
           </div>
         </div>
       </div>

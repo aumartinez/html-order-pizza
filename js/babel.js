@@ -47,11 +47,12 @@ const Header = () => (
                   </p>
                 </div>
                 
-                <div className="order-ready pull-left">
-                  <a href="#" className="bg-secondary"><span><i className="po po-scooter"></i></span> Ready to order?</a>
+                <div className="order-ready">
+                  <a href="/cart" className="bg-secondary"><span><i className="po po-scooter"></i></span> Ready to order?</a>
                   <p id="bill">                    
-                    <span>0</span> <span>items</span> <span>€00.00</span>                    
+                    <span id="ajax"></span>  <span>items</span>
                   </p>
+                  <span id="bell"><i className="fa fa-bell" aria-hidden="true"></i></span>
                 </div>
               </div>
             </nav>
@@ -63,6 +64,23 @@ const Header = () => (
 ReactDOM.render(
   <Header />,
   document.querySelector("header")
+);
+
+function getItems() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ajax").innerText = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/ws/items", true);
+  xhttp.send();
+}
+
+ReactDOM.render(
+  <getItems />,
+  document.getElementById("ajax"),
+  getItems()
 );
 
 //Goodies list
@@ -350,9 +368,9 @@ if (document.getElementById("promotion")){
 const TodayPizza = {
   id: "",
   pic: "img/pizza-03.png",
-  title: "Pepperoni Pizza",
-  caption: "Extra-Virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green olives, black olives, fresh tomatoes.",
-  link: "/pizza/pepperoni"
+  title: "Grand Italiano",
+  caption: "Ham, thin and crispy, purple onions, stretchy mozzarella, sweet peppers.",
+  link: "/pizza/pizza-03"
 }
 
 function TodayFeatured(props) {
@@ -367,6 +385,9 @@ function TodayFeatured(props) {
         <Col sm={4} className="col-sm-pull-8">
           <div className="todaypizza-card">
             <div className="todaypizza-caption">
+              <h4>
+              {item.title}
+              </h4>
               <p>
                 {item.caption}
               </p>
