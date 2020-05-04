@@ -40,7 +40,7 @@ function run() {
   if(prod_form != null) {
     let minus_btn = document.getElementById("minus-1");
     let plus_btn = document.getElementById("plus-1");    
-    let value_input = document.getElementById("item-qty");
+    let value_input = document.getElementById("item_qty");
     
     minus_btn.addEventListener("click", minus_handler, false);
     plus_btn.addEventListener("click", plus_handler, false);

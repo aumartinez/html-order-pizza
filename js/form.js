@@ -20,18 +20,23 @@ $(document).ready(function(){
        posting.done(function(response){         
          $("#mess").addClass("alert-success");
          $("#mess").addClass("active");
-         $("#mess").text("Added to cart");         
+         $("#mess").text("Added to cart");
+         setTimeout(function(){$("#mess").removeClass("active");}, 2000);
        }).fail(function(response){
          $("#mess").addClass("alert-danger");
          $("#mess").addClass("active");
          $("#mess").text("Server error, try again");
+         setTimeout(function(){$("#mess").removeClass("active");}, 2000);
        });
        
-       $get_url("/ws/items")
+       let get_url = "/ws/items";
        
-       $.get(get_url, function(data, status){
-        $("#ajax").text(data);
-       });
+       setTimeout(function(){
+         $.get(get_url, function(data, status){
+          $("#ajax").text(data);
+         });  
+       },100);
+       
      }
    );
    

@@ -6,17 +6,19 @@ const Col = ReactBootstrap.Col;
 
 const scriptsList = document.getElementsByTagName("script");
 const jsonList = JSON.parse(scriptsList[scriptsList.length - 1].innerText);
-const qtyList = Object.keys(jsonList.product_qty).map((key)=>{return [jsonList.product_qty[key]]});
+
+if (jsonList.product) {
+  const qtyList = Object.keys(jsonList.product_qty).map((key)=>{return [jsonList.product_qty[key]]});
 
 const filterList = () => {
   for (var i = 0; i < jsonList.product.length; i++) {
-    for (var j = 0; j < jsonList.product[i].length; j++) {
-      jsonList.product[i][j].item_qty = qtyList[i][i];
-    }
+    jsonList.product[i][0].item_qty = qtyList[i][0];
   }
 }
 
-filterList();
+filterList();  
+}
+
 
 function ShortList(props) {
   const list = props.cart.product;
@@ -24,7 +26,7 @@ function ShortList(props) {
   const cartList = list.map((row)=>{
     return row.map((item)=>{
       return(
-      <Row id={"item-" + item.id}>
+      <Row id={"item-" + item.id} key={item.id}>
         <Col sm={3} className="img-center">
           <img src={item.prod_pic} alt={item.prod_name} className="img-responsive" />
         </Col>
@@ -49,7 +51,7 @@ function ShortList(props) {
           <div className="pizza-qty">
             <div className="round-item">
               <span className="minus"> - </span>
-              <span className="number">1</span>
+              <span className="number">{item.item_qty}</span>
               <span className="plus"> + </span>
               <input id={"prod-id-" + item.id} name={"prod-id-" + item.id} type="hidden" value={item.prod_id} className="hidden-product" />
               <input id={"item-qty-" + item.id} name={"item-qty-" + item.id} type="hidden" min="1" max="99" value={item.item_qty} className="hidden-qty" />
@@ -59,7 +61,7 @@ function ShortList(props) {
               <button type="button" className="btn btn-primary update-control">
               <i className="fa fa-floppy-o" aria-hidden="true"></i>
               </button>
-              <button type="button" className="btn btn-primary delete-control">
+              <button type="button" className="btn btn-primary delete-control" onClick={()=>remove_elem("item-" + item.id)}>
               <i className="fa fa-trash-o" aria-hidden="true"></i>
               </button>
           </div>
@@ -93,8 +95,8 @@ function ShortList(props) {
             </p>
             
             <p>
-              <span>Shipping :</span>
-              <span id="shipping">0</span>
+              <span>Delivery :</span>
+              <span id="delivery">0</span>
             </p>
             
             <hr />
@@ -121,11 +123,44 @@ function ShortList(props) {
   );
 }
 
-if (document.getElementById("cart")){
+if (document.getElementById("cart") && jsonList.product.length > 0){
   ReactDOM.render(
     <ShortList cart = {jsonList} />,
     document.getElementById("cart")
   );  
+}
+
+function remove_elem(id) {   
+  let conf = confirm("Remove item?");
+  if (conf == true){
+   deleteItem(id);
+   cartcalc();
+  }
+  else {
+    return;
+  }
+}
+
+function deleteItem(id) {
+  let data = {
+       "_token": $('input[name="_token"]').val(),
+       "prod_id": $('#'+ id + ' .hidden-product').val()       
+     }
+     
+  let url = "/delete";
+  
+  let posting = $.post(url, data); 
+   posting.done(function(response){         
+     document.getElementById(id).remove();
+     if($(".order-items > div").length == 0) {
+       window.location.reload();
+     }
+     cartcalc();     
+   }).fail(function(response){
+     $("#mess").addClass("alert-danger");
+     $("#mess").addClass("active");
+     $("#mess").text("Server error, try again");
+   });
 }
 
 

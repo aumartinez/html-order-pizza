@@ -73,6 +73,15 @@ h3 {
   margin: 0 auto;
 }
 
+.required {
+  color: red;
+}
+
+.col-center {
+  float: none;
+  margin: 0 auto;
+}
+
 /* Branding */
 
 .color-primary {
@@ -904,6 +913,18 @@ h1.menu-title {
   margin-top: 5px;
 }
 
+/* Shipping */
+
+.address-info {
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+.table-order {
+  margin-bottom: 30px;
+}
+
+
 /* Mobile only classes */
 @media (max-width: 767px) {  
   header {
@@ -1246,6 +1267,14 @@ h1.menu-title {
   
   .cart-wrapper .item-price {
     text-align: left;
+  }
+  
+  /* Order shipping */
+  
+  .short-address .address-wrapper {
+    width: 30%;
+    float: left;    
+    margin-right: 10px;
   }
 
 }

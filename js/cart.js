@@ -2,7 +2,7 @@
 "use strict";
 
 window.addEventListener("load", function(){
-  let start = setTimeout(cartcal, 2000);
+  let start = setTimeout(cartcalc, 100);
 },false);
 
 function cartcalc() {
@@ -49,6 +49,11 @@ function cartcalc() {
   
   function calc_subtotal() {
     let items = document.querySelectorAll(".order-items > div");
+    
+    if (items.length == 0){
+      return;
+    }
+    
     let subtotal = 0;
     
     for (let i = 0; i < items.length; i++) {
@@ -56,7 +61,7 @@ function cartcalc() {
       let item_price = parseFloat(items[i].querySelector(".item-price > p > span:last-child").innerText);
       let oper = item_qty * item_price;
       subtotal = subtotal + oper;
-    }
+    }   
     
     document.getElementById("subtotal").innerText = subtotal.toFixed(2);
     document.getElementById("total").innerText = subtotal.toFixed(2);
@@ -81,29 +86,34 @@ function cartcalc() {
 
 $(document).ready(function(){
   
-   $(".update-control").on("click", function(e){
-     let url = "/ws/update";
+  let start = setTimeout(function(){    
+    
+    $(".update-control").on("click", function(e){
+     let url = "/update";
      let elem_cont = e.target.offsetParent;
      let mess = elem_cont.querySelector(".mess");
      let $mess = $(mess).addClass("dummy");
      
      let data = {
        "_token": $('input[name="_token"]').val(),
-       "prod-id": elem_cont.querySelector(".hidden-product").value,
-       "item-qty": elem_cont.querySelector(".hidden-qty").value
+       "prod_id": elem_cont.querySelector(".hidden-product").value,
+       "item_qty": elem_cont.querySelector(".hidden-qty").value
      }
-     
+              
      let posting = $.post(url, data);
      
      posting.done(function(response){         
          $mess.addClass("alert-success");
          $mess.addClass("active");
-         $mess.text("Added to cart");         
+         $mess.text("Item updated");
+         setTimeout(function(){$mess.removeClass("active");},2000);
        }).fail(function(response){
          $mess.addClass("alert-danger");
          $mess.addClass("active");
          $mess.text("Server error, try again");
+         setTimeout(function(){$mess.removeClass("active");},2000);
        });
-   });  
+   }); 
+  }, 2000);
    
  });
