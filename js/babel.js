@@ -16,7 +16,11 @@ const Header = () => (
                   DeliPizza
                 </a>
                 
-                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target=".mobile" aria-expanded="false" aria-controls="navbar">
+                <a href="/cart" title="Cart" className="color-white shop-icon">
+                  <span><i className="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                </a>
+                
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                   <span className="sr-only">Toggle navigation</span>
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
@@ -43,11 +47,12 @@ const Header = () => (
                   </p>
                 </div>
                 
-                <div className="order-ready pull-left">
-                  <a href="#" className="bg-secondary"><span><i className="po po-scooter"></i></span> Ready to order?</a>
+                <div className="order-ready">
+                  <a href="/cart" className="bg-secondary"><span><i className="po po-scooter"></i></span> Ready to order?</a>
                   <p id="bill">                    
-                    <span>0</span> <span>items</span> <span>€00.00</span>                    
+                    <span id="ajax"></span>  <span>items</span>
                   </p>
+                  <span id="bell"><i className="fa fa-bell" aria-hidden="true"></i></span>
                 </div>
               </div>
             </nav>
@@ -58,7 +63,24 @@ const Header = () => (
 
 ReactDOM.render(
   <Header />,
-  document.querySelector("header"),
+  document.querySelector("header")
+);
+
+function getItems() {  
+  const xhttp = new XMLHttpRequest();  
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ajax").innerText = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/ws/items", true);
+  xhttp.send();
+}
+
+ReactDOM.render(
+  <getItems />,
+  document.getElementById("ajax"),  
+  getItems()
 );
 
 //Goodies list
@@ -129,7 +151,7 @@ function GoodiesIcons(props) {
 if (document.getElementById("goodies-nav")){
   ReactDOM.render(
     <GoodiesIcons goodies = {Goodies} />,
-    document.getElementById("goodies-nav"),
+    document.getElementById("goodies-nav")
   );  
 }
 
@@ -194,7 +216,7 @@ const FeaturedCont = () => (
 if (document.getElementById("featured")){
   ReactDOM.render(
     <FeaturedCont />,
-    document.getElementById("featured"),
+    document.getElementById("featured")
   );
 }
 
@@ -270,7 +292,7 @@ function SetsCont(props) {
 if (document.getElementById("pizza-sets")){
   ReactDOM.render(
     <SetsCont homepizzas = {HomePizzas}/>,
-    document.getElementById("pizza-sets"),
+    document.getElementById("pizza-sets")
   );
 }
 
@@ -337,7 +359,7 @@ function Promotion(props) {
 if (document.getElementById("promotion")){
   ReactDOM.render(
     <Promotion todaypromo = {TodayPromotion}/>,
-    document.getElementById("promotion"),
+    document.getElementById("promotion")
   );
 }
 
@@ -346,9 +368,9 @@ if (document.getElementById("promotion")){
 const TodayPizza = {
   id: "",
   pic: "img/pizza-03.png",
-  title: "Pepperoni Pizza",
-  caption: "Extra-Virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green olives, black olives, fresh tomatoes.",
-  link: "/pizza/pepperoni"
+  title: "Grand Italiano",
+  caption: "Ham, thin and crispy, purple onions, stretchy mozzarella, sweet peppers.",
+  link: "/pizza/pizza-03"
 }
 
 function TodayFeatured(props) {
@@ -363,6 +385,9 @@ function TodayFeatured(props) {
         <Col sm={4} className="col-sm-pull-8">
           <div className="todaypizza-card">
             <div className="todaypizza-caption">
+              <h4>
+              {item.title}
+              </h4>
               <p>
                 {item.caption}
               </p>
@@ -380,7 +405,7 @@ function TodayFeatured(props) {
 if (document.getElementById("today-pizza")){
   ReactDOM.render(
     <TodayFeatured todaypizza = {TodayPizza}/>,
-    document.getElementById("today-pizza"),
+    document.getElementById("today-pizza")
   );
 }
 
@@ -431,9 +456,65 @@ function SocialIcons(props) {
   );
 }
 
-if (document.getElementById("social-nav")){
-  ReactDOM.render(
-    <SocialIcons social = {Social} />,
-    document.getElementById("social-nav"),
-  );
+const PizzaBanner = () => (
+  <div id="pizza-banner">
+  </div>
+);
+
+const Footer = () => (   
+  <Cont>
+    <Row>
+      <Col xs={12}>
+        <nav id="social-nav" role="navigatin" className="social-links">
+          <SocialIcons social = {Social} />
+          
+        </nav>
+      </Col>
+    </Row>
+    
+    <Row>
+      <Col xs={12}>
+        <h2 className="text-center color-white brand">
+          DeliPizza
+        </h2>
+      </Col>
+    </Row>
+    
+    <Row>
+      <Col xs={12}>
+        <ul className="address">
+          <li>
+            DeliPizza
+          </li>
+          <li>
+            Iglesia de la Asuncion, 2c al norte
+          </li>              
+          <li>
+            Telephone: +1 555 1234
+          </li>
+        </ul>
+      </Col>
+    </Row>
+    
+    <Row>
+      <Col xs={12} className="copyright">
+        <p className="text-center">
+          Copyright © 2020
+        </p>
+      </Col>
+    </Row>
+  </Cont>
+  
+);
+
+const FooterElems = () => {
+  return [
+    <PizzaBanner />, 
+    <Footer />
+  ];
 }
+
+ReactDOM.render(    
+  <FooterElems />,  
+  document.querySelector("footer")
+);
