@@ -634,18 +634,27 @@ h1.menu-title {
 
 /* Pizza page */
 
+.breadcrumb {
+  background-color: transparent;
+}
+
+.breadcrumb a {
+  color: #C00A27;
+}
+
+.breadcrumb ul li::after {
+  content: "/";
+}
+
+.breadcrumb ul li:last-child::after {
+  content: "";
+}
+
+
 .bg-pizza {
   background-image: url("../img/bg-pizza-table.jpg");
   background-size: cover;
   background-position: center;
-}
-
-.row.pizza-item {
-  
-}
-
-.row.pizza-item > div {
-  
 }
 
 .pizza-wrapper .pizza-caption h1 {
@@ -681,7 +690,8 @@ h1.menu-title {
 }
 
 .pizza-wrapper form #minus-1 {
-  float: left;  
+  float: left;
+  cursor: pointer;
 }
 
 .pizza-wrapper form #number {
@@ -694,7 +704,8 @@ h1.menu-title {
 
 
 .pizza-wrapper form #plus-1 {
-  float: right;  
+  float: right;
+  cursor: pointer;
 }
 
 
